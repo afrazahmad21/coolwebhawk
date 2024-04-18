@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300);
+@import "./../../../styles/variables";
+
+.nav-icon-2x {
+  font-size: 2em;
+}
+.nav-icon {
+  position: relative;
+  display: table-cell;
+  width: 60px;
+  height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20px;
+}
+
+.main-menu {
+  background: $main-blue;
+  border-radius: 0 3em 3em 0;
+  height: 100%;
+  display: inline-block;
+  //width:60px;
+  //-webkit-transition:width .05s linear;
+  //transition:width .05s linear;
+  //-webkit-transform:translateZ(0) scale(1,1);
+  //z-index:1000;
+
+  .logo {
+    margin-top: 1em;
+    margin-bottom: 4em;
+    height: 5em;
+    background-image: url("../../../styles/hawk-bckg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    display: flex;
+    justify-content: center;
+  }
+
+  ul {
+    padding-left: 2em;
+    margin: 7px 0;
+
+    .menu-item {
+      padding-bottom: 1.5em;
+    }
+
+    li {
+      position: relative;
+      display: block;
+      width: 12.5em;
+
+      a {
+        position: relative;
+        display: table;
+        border-collapse: collapse;
+        border-spacing: 0;
+        color: $white-color;
+        font-family: arial;
+        font-size: 14px;
+        text-decoration: none;
+        -webkit-transform: translateZ(0) scale(1, 1);
+        -webkit-transition: all 0.1s linear;
+        transition: all 0.1s linear;
+      }
+    }
+  }
+
+  .nav-icon {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 2.1em;
+  }
+
+  .nav-text {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    width: 190px;
+  }
+
+  .logout {
+    padding-left: 2em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    .horizontal-line {
+      height: 2px;
+      background: white;
+      margin-right: 2em;
+      margin-bottom: 1.5em;
+    }
+  }
+}
+
+.no-touch .scrollable.hover {
+  overflow-y: hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+  overflow-y: auto;
+  overflow: visible;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+nav {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="custom-chart-container alignment1">
+    <h4 class="chart-title">HAWKS STATUS</h4>
+    <div class="chart-wrapper">
+      <round-progress [current]="reportStats?.reportCompleted" [max]="reportStats?.reportsRequested" [color]="'#45ccce'" [background]="'#eaeaea'"
+        [radius]="125" [stroke]="12" [semicircle]="true" [rounded]="true" [clockwise]="true" [responsive]="true"
+        [duration]="800" [animation]="'easeInOutQuart'" [animationDelay]="500"></round-progress>
+
+      <div class="value-text">
+        <span class="value">{{reportStats?.reportCompleted}}/{{reportStats?.reportsRequested}}</span>
+        <span class="completed">Completed</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="custom-chart-container alignment2">
+    <h4 class="chart-title">ACCOUNT STATUS</h4>
+    <div class="chart-wrapper">
+      <round-progress [current]="reportStats?.reportLeft" [max]="reportStats?.reportsPurchased" [color]="'#EF9591'" [background]="'#eaeaea'"
+        [radius]="125" [stroke]="12" [semicircle]="true" [rounded]="true" [clockwise]="true" [responsive]="true"
+        [duration]="800" [animation]="'easeInOutQuart'" [animationDelay]="500"></round-progress>
+
+      <div class="value-text">
+        <span class="value">{{reportStats?.reportLeft}}/{{reportStats?.reportsPurchased}}</span>
+        <span class="completed">Reports Left</span>
+      </div>
+    </div>
+  </div>
+
+
+</div>

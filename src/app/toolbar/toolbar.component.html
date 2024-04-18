@@ -1,0 +1,29 @@
+<div class="container">
+  <!--            <button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>-->
+  <div class="breadcrumbs">
+    <app-breadcrumbs></app-breadcrumbs>
+  </div>
+  <div class="top-bar">
+    <div class="search top-bar-item">
+      <span class="icon-wrapper">
+        <mat-icon svgIcon="search-clean"></mat-icon>
+      </span>
+    </div>
+    <div class="light top-bar-item">
+      <span class="icon-wrapper">
+        <mat-icon svgIcon="light"></mat-icon>
+      </span>
+    </div>
+    <div class="mail top-bar-item">
+      <span class="icon-wrapper">
+        <mat-icon svgIcon="mail"></mat-icon>
+      </span>
+    </div>
+    <div class="logged-user top-bar-item">
+      <span>
+        <mat-icon svgIcon="user"></mat-icon>
+      </span>
+      <span class="user-name">{{data.name}}</span>
+    </div>
+  </div>
+</div>

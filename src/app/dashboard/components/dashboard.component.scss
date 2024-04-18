@@ -1,0 +1,56 @@
+.container {
+  .header {
+    margin: 2em 0 0 2em;
+
+    .title {
+      font-size: 1.5em;
+    }
+  }
+  .main-content {
+    margin: 5em 8em 8em 8em;
+
+    .upper-row {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 1em;
+      justify-content: space-between;
+
+      .primary-button {
+        margin: 2em 0 2em 0;
+        border-radius: 2em;
+      }
+
+      .hello {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin-right: 4%;
+        margin-top: 2.2%;
+        color: #4D6E84;
+
+        .welcome {
+          font-size: 1.4em;
+          color: #4D6E84;
+        }
+      }
+
+      .charts {
+        width: 66%;
+      }
+    }
+
+    .lower-row {
+      display: flex;
+      justify-content: space-between;
+
+      .table-container {
+        width: 66%;
+        margin-right: 2em;
+      }
+
+      .news-container {
+        width: 32%;
+      }
+    }
+  }
+}

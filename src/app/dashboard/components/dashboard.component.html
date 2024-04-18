@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="main-content">
+    <div class="upper-row">
+      <div class="hello">
+        <span class="welcome"><b>Hello {{data?.name}},</b> Welcome back. Please check your latest reports
+          and messages.</span>
+
+        <a [routerLink]="['/search']">
+          <button class="primary-button" mat-raised-button color="primary">Let's Hawk
+          </button>
+
+        </a>
+      </div>
+      <div class="charts">
+        <app-semi-circle-chart></app-semi-circle-chart>
+      </div>
+    </div>
+    <div class="lower-row">
+      <div class="table-container">
+        <app-hawks-table></app-hawks-table>
+      </div>
+      <div class="news-container">
+        <app-news></app-news>
+      </div>
+    </div>
+  </div>
+</div>

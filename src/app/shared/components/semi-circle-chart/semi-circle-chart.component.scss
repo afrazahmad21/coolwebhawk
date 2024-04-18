@@ -1,0 +1,74 @@
+.container {
+  display: flex;
+
+
+  // .chart-title + .chart-wrapper {
+  //   display: block;
+  // }
+
+  .custom-chart-container {
+
+    width: 50%;
+    margin: 0 5px;
+
+    &:last-child {
+      margin: 0;
+      margin-left: 5px;
+    }
+
+    .chart-title {
+      color: #4D6E84;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    .chart-wrapper {
+      height: auto;
+      background: white;
+      width: 100%;
+      box-shadow: 0 1px 20px #283a6f12;
+      border-radius: 9px;
+      padding: 2.5em 1em 1em 1em;
+      align-items: center;
+      justify-content: center;
+
+      round-progress {
+        padding-bottom: 43% !important;
+      }
+
+      .value-text {
+        bottom: 4em;
+        height: 0px;
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .value {
+          font-size: 2em;
+          color: #4D6E84;
+        }
+        .completed {
+          font-size: 1.5em;
+          color: #4D6E84;
+        }
+      }
+    }
+  }
+
+
+
+  .first {
+    margin-right: 2em;
+  }
+}
+.alignment1 {
+  position: relative;
+  right: 15px;
+}
+.alignment2 {
+  position: relative;
+  left: 5px;
+}

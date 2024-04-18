@@ -1,0 +1,14 @@
+@import "./helpers";
+@import "./variables";
+
+button {
+  text-transform: capitalize;
+}
+
+.input-validation-error {
+  border-color: $error-red;
+}
+
+.hidden {
+  visibility: hidden;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row title-container">
+    <span class="title">Who do you want to hawk?</span>
+  </div>
+  <div class="row">
+    <div
+      class="box"
+      *ngFor="let item of hawkScopes"
+      (click)="redirectToForm(item.name)"
+    >
+      <div class="box-content">
+        <span class="icon">
+          <mat-icon [svgIcon]="item.iconName"></mat-icon>
+        </span>
+        <span class="title">{{ item.name }}</span>
+      </div>
+    </div>
+  </div>
+</div>

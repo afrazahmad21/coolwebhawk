@@ -1,0 +1,54 @@
+@import "./../../../../styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .row {
+    display: flex;
+    width: auto;
+
+    .box {
+      display: flex;
+      align-items: center;
+      width: 17em;
+      height: 14em;
+      background: #ffffff 0 0 no-repeat padding-box;
+      box-shadow: 0 4px 10px #0000000f;
+      border-radius: 0.5em;
+      cursor: pointer;
+
+      .box-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        .icon {
+          margin-bottom: 2.5em;
+          mat-icon {
+            font-size: 6em;
+            width: 0.7em;
+            height: 0.7em;
+            margin-top: 0.3em;
+          }
+        }
+      }
+    }
+
+    .box:not(:last-child) {
+      margin-right: 2em;
+    }
+  }
+
+  .title-container {
+    margin-bottom: 2em;
+    font-size: 2em;
+    color: $title-color;
+    font: normal normal 300 42px/49px Work Sans;
+  }
+}

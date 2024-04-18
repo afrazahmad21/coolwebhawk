@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="header">
+    <span>Latest Hawks</span>
+  </div>
+  <div class="table">
+    <table class="hawks-table" mat-table [dataSource]="dataSource">
+      <!-- Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+            [checked]="selection.isSelected(row)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="formId">
+        <th mat-header-cell *matHeaderCellDef>Report Name</th>
+        <td mat-cell *matCellDef="let element">{{ element?.formId }}</td>
+      </ng-container>
+
+      <!-- Flag Column -->
+      <ng-container matColumnDef="flag">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <span class="badge">NEW</span>
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let element">
+          <div class="progress-bar">
+            <span class="progress-bar-fill" [style.width]="generateRandomPercentage(element?.status)"></span>
+          </div>
+        </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Date</th>
+        <td mat-cell *matCellDef="let element">{{ element?.date}}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef>Time</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element?.time }}
+        </td>
+      </ng-container>
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action </th>
+        <td mat-cell *matCellDef="let element">
+          <a target="_blank" href="{{element.fileUrl ?? ''}}">
+            <!-- [class.grey-eye]="element.fileUrl" -->
+            <mat-icon [class.grey-icon]="!element.fileUrl">visibility</mat-icon>
+          </a>
+          <a (click)="downloadReport(element)">
+            <mat-icon [class.grey-icon]="!element.fileUrl">cloud_download</mat-icon>
+          </a>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="selection.toggle(row)"></tr>
+    </table>
+  </div>
+  <div class="button-in-middle">
+    <button class="primary-button" mat-raised-button color="primary">
+      View All Hawks
+    </button>
+  </div>
+</div>

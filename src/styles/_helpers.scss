@@ -1,0 +1,20 @@
+@import "./variables";
+
+.primary-button {
+  /* Layout Properties */
+  width: 11em;
+  height: 2.7em;
+  /* UI Properties */
+  background: $white-color 0 0 no-repeat padding-box;
+  color: $link-blue;
+  font-size: 0.9em;
+  box-shadow: 0 3px 6px #00000008;
+  border: 2px solid $link-blue;
+  border-radius: 28px;
+  opacity: 1;
+}
+
+.button-in-middle {
+  display: flex;
+  justify-content: center;
+}

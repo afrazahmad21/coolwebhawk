@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="logo"></div>
+    <div class="login">
+      <form [formGroup]="loginFormGroup">
+        <div class="form-field">
+          <mat-form-field appearance="fill" [floatLabel]="'never'">
+            <input
+              matInput
+              placeholder="User Name / Email"
+              required
+              formControlName="email"
+            />
+          </mat-form-field>
+        </div>
+        <div class="form-field">
+          <mat-form-field appearance="fill" [floatLabel]="'never'">
+            <input
+              matInput
+              placeholder="Password"
+              [type]="viewPass ? 'text' : 'password'"
+              required
+              formControlName="password"
+            />
+            <mat-icon
+              class="eye-icon"
+              matSuffix
+              [svgIcon]="viewPass ? 'eye-crossed' : 'eye'"
+              (click)="togglePassView()"
+            ></mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="forgotten-password">
+          <span (click)="activateForgotPassProcedure()">Forgot Password?</span>
+        </div>
+        <div class="action-buttons">
+          <button
+            class="primary-button"
+            mat-raised-button
+            color="primary"
+            (click)="login()"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

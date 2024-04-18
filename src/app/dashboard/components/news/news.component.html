@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="title"><span>What's New</span></div>
+  <div class="card-wrapper">
+    <mat-card class="news-card" *ngFor="let newsItem of news">
+      <mat-card-title class="title">{{ newsItem.title }}</mat-card-title>
+      <mat-card-content>
+        <p>{{ newsItem.content }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="button-in-middle">
+    <button class="primary-button" mat-raised-button color="primary">
+      Hawk News
+    </button>
+  </div>
+</div>

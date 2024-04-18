@@ -1,0 +1,23 @@
+@import "variables";
+@import "helpers";
+
+.mat-form-field {
+  .mat-form-field-wrapper {
+    padding-bottom: 0.3em;
+    .mat-form-field-underline {
+      display: none;
+    }
+    .mat-form-field-flex {
+      width: 19em;
+      height: 2.6em;
+      background: $white-color 0 0 no-repeat padding-box;
+      box-shadow: 0 1px 10px #283a6f42;
+      border-radius: 9px;
+
+      .mat-form-field-infix {
+        position: relative;
+        top: -15px;
+      }
+    }
+  }
+}

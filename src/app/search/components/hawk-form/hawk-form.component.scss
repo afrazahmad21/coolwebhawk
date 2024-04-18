@@ -1,0 +1,111 @@
+@import "../../../../styles/helpers";
+
+.container {
+  display: flex;
+  height: 100%;
+  margin: 2em 1em 0 5em;
+
+  .section-wrapper {
+    .title {
+      height: 2em;
+      border-bottom: 2px solid #dce2e5;
+      margin-bottom: 1em;
+      font-size: 1.5em;
+
+      .title-info {
+        color: #7f8081;
+        font-size: 12px;
+      }
+
+    }
+
+    .form {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      .nested-form-group {
+        width: 94%;
+        margin-bottom: 2em;
+
+        .input {
+          width: 20%;
+          margin-bottom: 0.6em;
+        }
+      }
+    }
+
+    .submit {
+      float: left;
+      padding-bottom: 4em;
+    }
+  }
+}
+
+.lbl-file-name {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.files-name-block {
+  margin-top: 10px;
+  position: relative;
+}
+
+::ng-deep {
+
+  .mat-form-field {
+    &.textarea {
+      height: auto !important;
+      width: 100% !important;
+
+      .mat-form-field-wrapper .mat-form-field-flex {
+        height: 10rem !important;
+        width: 100% !important;
+      }
+
+    }
+  }
+
+  .my-custom-field {
+    .mat-form-field-flex {
+      width: 100% !important;
+    }
+  }
+
+  .mat-form-field .mat-form-field-wrapper .mat-form-field-flex {
+    width: 92% !important;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 10px #283a6f11;
+
+
+  }
+  .mat-form-field-outline-start,
+  .mat-form-field-outline-gap,
+  .mat-form-field-outline-end {
+    border: none !important;
+  }
+
+  .ngx-file-drop__drop-zone {
+    position: relative;
+    box-sizing: border-box !important;
+    box-shadow: 0 1px 10px #283a6f42 !important;
+    background: #ffffff 0 0 no-repeat padding-box !important;
+    border-radius: 9px !important;
+    border: none !important;
+    .ngx-file-drop__content {
+      button {
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+        border-radius: 9px !important;
+        background-color: transparent !important;
+      }
+    }
+  }
+
+
+}
+
+
+

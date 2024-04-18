@@ -1,0 +1,177 @@
+<div class="container">
+  <div class="section-wrapper">
+    <form class="form" [formGroup]="hawkFormGroup">
+
+      <ng-container *ngIf="formType != 'Company'">
+
+        <!-- personal information -->
+        <div class="nested-form-group" [formGroup]="getNestedFormGroup('personalInformation')">
+          <p class="title">Personal Information</p>
+          <ng-container *ngFor="let item of formConfig.personalInformation" [ngSwitch]="item.type">
+            <mat-form-field appearance="outline" class="input" *ngSwitchCase="'date'">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [matDatepicker]="picker" [formControlName]="item.fieldName" />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input" *ngSwitchCase="'string'">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [formControlName]="item.fieldName" />
+            </mat-form-field>
+          </ng-container>
+        </div>
+
+        <!-- contact information -->
+        <div class="nested-form-group" [formGroup]="getNestedFormGroup('contactInformation')">
+          <p class="title">Contact Information</p>
+          <ng-container *ngFor="let item of formConfig.contactInformation">
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [formControlName]="item.fieldName" />
+            </mat-form-field>
+          </ng-container>
+        </div>
+
+        <!-- legal information -->
+        <div class="nested-form-group" [formGroup]="getNestedFormGroup('legalInformation')">
+          <p class="title">Legal Information</p>
+          <ng-container *ngFor="let item of formConfig.legalInformation">
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [formControlName]="item.fieldName" />
+            </mat-form-field>
+          </ng-container>
+        </div>
+
+        <!-- business information -->
+        <div class="nested-form-group" [formGroup]="getNestedFormGroup('businessInformation')">
+          <p class="title">Business Information</p>
+          <ng-container *ngFor="let item of formConfig.businessInformation">
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [formControlName]="item.fieldName" />
+            </mat-form-field>
+          </ng-container>
+        </div>
+
+        <!-- professional information -->
+        <div class="nested-form-group" [formGroup]="getNestedFormGroup('professionalInformation')">
+          <p class="title">Professional Information</p>
+          <ng-container *ngFor="let item of formConfig.professionalInformation">
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [formControlName]="item.fieldName" />
+            </mat-form-field>
+          </ng-container>
+        </div>
+
+      </ng-container>
+
+      <ng-container *ngIf="formType == 'Company'">
+
+        <!-- business information -->
+        <div class="nested-form-group" [formGroup]="getNestedFormGroup('businessInformation')">
+          <p class="title">Business Information</p>
+          <ng-container *ngFor="let item of formConfig.businessInformation">
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [formControlName]="item.fieldName" />
+            </mat-form-field>
+          </ng-container>
+        </div>
+
+        <!-- contact information -->
+        <div class="nested-form-group" [formGroup]="getNestedFormGroup('contactInformation')">
+          <p class="title">Contact Information</p>
+          <ng-container *ngFor="let item of formConfig.contactInformation">
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [formControlName]="item.fieldName" />
+            </mat-form-field>
+          </ng-container>
+        </div>
+
+        <!-- legal information -->
+        <div class="nested-form-group" [formGroup]="getNestedFormGroup('legalInformation')">
+          <p class="title">Legal Information</p>
+          <ng-container *ngFor="let item of formConfig.legalInformation">
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [formControlName]="item.fieldName" />
+            </mat-form-field>
+          </ng-container>
+        </div>
+
+        <!-- personal information -->
+        <div class="nested-form-group" [formGroup]="getNestedFormGroup('personalInformation')">
+          <p class="title">Personal Information</p>
+          <ng-container *ngFor="let item of formConfig.personalInformation" [ngSwitch]="item.type">
+            <mat-form-field appearance="outline" class="input" *ngSwitchCase="'date'">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [matDatepicker]="picker" [formControlName]="item.fieldName" />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="input" *ngSwitchCase="'string'">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [formControlName]="item.fieldName" />
+            </mat-form-field>
+          </ng-container>
+        </div>
+
+        <!-- professional information -->
+        <div class="nested-form-group" [formGroup]="getNestedFormGroup('professionalInformation')">
+          <p class="title">Professional Information</p>
+          <ng-container *ngFor="let item of formConfig.professionalInformation">
+            <mat-form-field appearance="outline" class="input">
+              <mat-label>{{ item.label }}</mat-label>
+              <input matInput [formControlName]="item.fieldName" />
+            </mat-form-field>
+          </ng-container>
+        </div>
+
+      </ng-container>
+
+      <!-- Upload Files -->
+      <div class="nested-form-group">
+        <p class="title">Upload Files <span class="title-info">(Optional)</span></p>
+
+        <ngx-file-drop style="cursor: pointer;" dropZoneLabel="Drop files here" (onFileDrop)="fileDropped($event)">
+          <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+            <!-- Drop file here -->
+            <button style="cursor: pointer;" type="button" (click)="openFileSelector()">Browse or Drop Files
+              here</button>
+          </ng-template>
+        </ngx-file-drop>
+
+        <div class="files-name-block">
+          <ng-container *ngFor="let item of uploadedFiles; let isFirst = first;">
+            <span class="lbl-file-name" *ngIf="!isFirst">|</span>
+            <mat-label [class.lbl-file-name]="!isFirst">{{ item?.name }}</mat-label>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- Additional information -->
+      <div class="nested-form-group">
+        <p class="title">Additional Information <span class="title-info">(Optional)</span></p>
+        <mat-form-field appearance="outline" class="input textarea my-custom-field">
+          <mat-label>Additional Information</mat-label>
+          <textarea matInput style="width: 100%;" formControlName="additionalInformation" cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"></textarea>
+        </mat-form-field>
+      </div>
+
+    </form>
+    <div class="submit">
+      <button mat-button (click)="submitForm()" class="primary-button" [disabled]="!hawkFormGroup.valid">
+        Hawk
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<ng-template #professionalInfoTemplate>
+
+</ng-template>

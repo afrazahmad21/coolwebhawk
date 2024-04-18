@@ -1,0 +1,36 @@
+@import "./../../../../styles/variables";
+@import "./../../../../styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .social {
+    max-width: 21em;
+  }
+
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    max-width: 21em;
+    text-align: center;
+    font-size: 1.2em;
+
+    span {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2em;
+      letter-spacing: 0;
+      color: #283a6f;
+    }
+  }
+
+  .action {
+    .primary-button {
+      border-radius: 2em;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+@import "./../../../../styles/variables";
+@import "./../../../../styles/helpers";
+
+.container {
+  .header {
+    color: $main-blue;
+    font-size: 1.5em;
+    margin-top: 1%;
+  }
+
+  .table {
+    .hawks-table {
+      width: 100%;
+      border-spacing: 0 8px !important;
+      background: none;
+
+      .progress-bar {
+        width: 100%;
+        background-color: #e0e0e0;
+        border-radius: 1em;
+
+        .progress-bar-fill {
+          display: block;
+          height: 0.6em;
+          background-color: #a8dab5;
+          border-radius: 1em;
+          transition: width 500ms ease-in-out;
+        }
+      }
+
+      .mat-header-cell {
+        text-align: center;
+        padding-left: 0;
+      }
+
+      .mat-column-select {
+        width: 7%;
+      }
+
+      .mat-column-reportName {
+        width: 15%;
+      }
+
+      .mat-column-flag {
+        width: 10%;
+      }
+
+      .mat-column-status {
+        width: 25%;
+      }
+
+      .mat-column-date {
+        padding-left: 1.18em;
+        width: 15%;
+      }
+
+      .mat-column-time {
+        padding-left: 1.18em;
+        width: 15%;
+      }
+
+      .mat-header-cell {
+        border-bottom-width: 0;
+        font-size: 1.1em;
+      }
+
+      .mat-cell {
+        text-align: center;
+        .badge {
+          background: #7fdbee;
+          padding: 3px 5px;
+          font-size: 0.6em;
+          border-radius: 7px;
+        }
+
+        .grey-icon {
+          color: #e0e0e0 !important;
+        }
+
+      }
+
+      td.mat-cell {
+        padding: 6px 0 6px 0;
+        border-bottom: 2px solid $white-color;
+        border-top: 2px solid $white-color;
+      }
+
+      td.mat-cell:first-child {
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+      }
+
+      td.mat-cell:last-child {
+        border-right: 2px solid $white-color;
+        border-bottom-right-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      .mat-row {
+        box-shadow: 0 1px 10px #283a6f11;
+        border-radius: 9px;
+        background: #ffffff;
+        // background-color: rgb(255 255 255 / 50%);
+      }
+    }
+  }
+}
+.mat-icon {
+  cursor: pointer;
+}
+.material-icons {
+  font-size: 20px;
+}
